@@ -1,22 +1,18 @@
-[What is this](https://github.com/prettynb/pnbp/blob/master/commands/pprint.py), and what does it do?
-
-Modern terminal emulators can handle clickable links (e.g. [GNOME](https://unix.stackexchange.com/questions/112267/create-clickable-links-in-terminal#437585)). 
-
-[Rich](https://github.com/willmcgugan/rich) is a Python library that can handle rendering [markup links](https://rich.readthedocs.io/en/latest/markup.html?highlight=link#links) to terminals that support them. 
-
-[iTerm2](https://iterm2.com/) is a terminal emulator for macos that can handle clicks to links, and has an [Applescript API](https://iterm2.com/documentation-scripting.html) -> ... 
-  
-iTerm (and the like) will open clicked links to the default Application that handles a protocol :
-- (e.g. ```https``` -> https://github.com/,  URL, to default browser)
-- (e.g. ```file``` -> ```file:///Users/alice/hello.txt```, [file URI scheme](https://en.wikipedia.org/wiki/File_URI_scheme), to default app) 
-- ... 
-
 **pnano** ("protocol-ed nano") is ultimately a non-nano name to call some monkey patch that handles for the (unused) URI protocol namespace of ```nano://``` to open files directly to the nano text editor. (e.g. as written for macos, when clicking ```nano:///Users/alice/hello.py```, ```hello.py``` will be opened in ```nano``` to the second (to the right) pane in a split-pane iTerm2 window (closed/->reopened).
 
 Why? 
 - (a) [vim]() has a [wiki](https://vimwiki.github.io/) system.
 - (b) [emacs]() has a [wiki](https://github.com/caiorss/org-wiki) system.
 - (c) [nano](https://www.nano-editor.org/) *doesn't* have a wiki system.
+
+... 
+- Modern terminal emulators can handle clickable links (e.g. [GNOME](https://unix.stackexchange.com/questions/112267/create-clickable-links-in-terminal#437585)). 
+- [Rich](https://github.com/willmcgugan/rich) is a Python library that can handle rendering [markup links](https://rich.readthedocs.io/en/latest/markup.html?highlight=link#links) to terminals that support them. 
+- [iTerm2](https://iterm2.com/) is a terminal emulator for macos that can handle clicks to links, and has an [Applescript API](https://iterm2.com/documentation-scripting.html) -> ... 
+- iTerm (and the like) will open clicked links to the default Application that handles a protocol :
+- (e.g. ```https``` -> https://github.com/,  URL, to default browser)
+- (e.g. ```file``` -> ```file:///Users/alice/hello.txt```, [file URI scheme](https://en.wikipedia.org/wiki/File_URI_scheme), to default app) 
+- ... 
 
 --- 
 
@@ -43,9 +39,9 @@ With [pnbp](https://github.com/prettynb/pnbp),
 on ```nb-pprint -n mynote```, before rich [Markdown](https://rich.readthedocs.io/en/stable/markdown.html) handling, every internal **\[\[link\]\]** is converted to **\[link\]\(pnbp:///path/to/notebook/mynote.md\)** and a frame is added to the pretty print-out w/ : 
 
 MENU : 
---->: [refresh]() - re-print the current note (e.g. on update)
-nano: [mynote]() - split-pane and open the currently printed (`-n`) note to ```nano```
-nano: [new note]() - split-pane to a new (incremented, default name) .md note on path
+--->: [refresh]() - re-print the current note (e.g. on update)    
+nano: [mynote]() - split-pane and open the currently printed (`-n`) note to ```nano```    
+nano: [new note]() - split-pane to a new (incremented, default name) .md note on path    
 
 if the markdown wasn't being marked-up and rendered, it would look like this e.g. :
 
