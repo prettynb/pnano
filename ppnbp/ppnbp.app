@@ -23,7 +23,7 @@ on open location myURL
 	
 	set filename to item (count of the text items in pathname) of the text items of pathname
 	
-	set cmd to "nb-pprint -n " & "\"" & filename & "\""
+	set cmd to "nbn-pprint -n " & "\"" & filename & "\""
 	
 	tell application "iTerm"
 		activate
